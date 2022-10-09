@@ -3,9 +3,7 @@ import java.time.*;
 import java.util.*;
 
 import javax.persistence.*;
-import javax.persistence.Entity;
 
-import org.hibernate.annotations.*;
 import org.openxava.annotations.*;
 import org.openxava.calculators.*;
 
@@ -19,11 +17,8 @@ import tuempresa.facturacion.calculadores.*;
 "detalles;" +
 "observaciones"
 )
-public class Factura {
-	@Id
-	 @GeneratedValue(generator="system-uuid")
-	 @Hidden
-	 @GenericGenerator(name="system-uuid", strategy="uuid")
+public class Factura  extends Identificable{
+	
 	
 	 @Column(length=32)
 	 String oid;
