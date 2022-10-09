@@ -13,6 +13,12 @@ import lombok.*;
 import tuempresa.facturacion.calculadores.*;
 
 @Entity @Getter @Setter
+@View(members= 
+"anyo, numero, fecha;" + 
+"cliente;" + 
+"detalles;" +
+"observaciones"
+)
 public class Factura {
 	@Id
 	 @GeneratedValue(generator="system-uuid")
@@ -36,7 +42,8 @@ public class Factura {
 	 @DefaultValueCalculator(CurrentLocalDateCalculator.class)
 	 LocalDate fecha;
 	 
-	 @ManyToOne(fetch = FetchType.LAZY, optional = false)
+	 @ManyToOne(fetch=FetchType.LAZY, optional=false)
+	 @ReferenceView("Simple")
 	 Cliente cliente;
 	 
 	 @ElementCollection
