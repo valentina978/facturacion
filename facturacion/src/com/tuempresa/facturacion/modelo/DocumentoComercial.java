@@ -11,11 +11,13 @@ import lombok.*;
 import tuempresa.facturacion.calculadores.*;
 
 @Entity @Getter @Setter
-@View(members= 
-"anyo, numero, fecha;" + 
-"cliente;" + 
+@View(members=
+"anyo, numero, fecha," + 
+"datos {" + 
+"cliente;" +
 "detalles;" +
-"observaciones"
+"observaciones" +
+"}"
 )
  abstract public class DocumentoComercial  extends Identificable{
 	
