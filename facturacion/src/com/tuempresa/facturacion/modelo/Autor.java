@@ -16,6 +16,7 @@ public class Autor extends Identificable{
 	String nombre;
 	
 	
+	
 	@OneToMany(mappedBy="autor")
 	@ListProperties("numero, descripcion, precio")
 	Collection<Producto> productos;

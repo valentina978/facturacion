@@ -20,9 +20,12 @@ public class Cliente {
 	
 	
 	 @Column(length=50) 
-	 @Required 
+	@Required
 	 String nombre;
+	 
 	 
 	 @Embedded 
 	 Direccion direccion; 
+	 
+	 
 }

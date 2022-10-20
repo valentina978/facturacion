@@ -4,7 +4,7 @@ import javax.persistence.*;
 import lombok.*;
 
 
-@Embeddable 
+@Embeddable
 @Getter @Setter
  
 public class Direccion {
