@@ -22,7 +22,7 @@ members=
 public class Factura extends DocumentoComercial{
 
 	
-	 @OneToMany(mappedBy="factura")
+	@OneToMany(mappedBy="factura")
 	 @CollectionView("SinClienteNiFactura") 
 	 private Collection<Pedido> pedidos;
 }

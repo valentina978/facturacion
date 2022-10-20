@@ -9,7 +9,11 @@ import org.openxava.annotations.*;
 import org.openxava.model.*;
 import lombok.*;
 
-
+/**
+ * Esto es un ejemplo de una entidad.
+ * 
+ * Siéntete libre de renombrarla, modificarla o borrarla a tu gusto.
+ */
 
 @Entity @Getter @Setter
 public class TuPrimeraEntidad extends Identifiable {

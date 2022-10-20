@@ -1,2 +1,33 @@
 /*C3*/SET SCHEMA PUBLIC
 DISCONNECT
+/*C5*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C6*/SET SCHEMA PUBLIC
+CREATE SCHEMA FACTURACIOON AUTHORIZATION SA
+create table facturacioon.IMAGES (ID varchar(255) not null, GALLERY varchar(255), IMAGE varbinary(16777216), primary key (ID))
+create table facturacioon.OXDISCUSSIONCOMMENTS (id varchar(32) not null, comment clob(16777216), discussionId varchar(32), time timestamp, userName varchar(30), primary key (id))
+create table facturacioon.TuPrimeraEntidad (id varchar(32) not null, descripcion varchar(50), fecha date, importe numeric(19,2), primary key (id))
+create index facturacioon.IDXbhlx4vunn24ym1tbrlgq8g30m on facturacioon.OXDISCUSSIONCOMMENTS (discussionId)
+DISCONNECT
+/*C7*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C8*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C9*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C10*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C11*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C12*/SET SCHEMA PUBLIC
+create table facturacioon.Clientes (numero integer not null, descripcion varchar(50), primary key (numero))
+DISCONNECT
+/*C13*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C14*/SET SCHEMA PUBLIC
+create table facturacioon.Producto (numero integer not null, descripcion varchar(50), primary key (numero))
+DISCONNECT
+/*C15*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C17*/SET SCHEMA PUBLIC
+create table facturacioon.Categoria (oid varchar(32) not null, descripcion varchar(50), primary key (oid))
