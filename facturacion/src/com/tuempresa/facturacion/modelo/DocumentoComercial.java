@@ -31,9 +31,9 @@ abstract public class DocumentoComercial extends Identificable{
 	int anyo;
 	
 	@Column(length = 6)
-	//@DefaultValueCalculator (value = CalculadorSiguienteNumeroParaAnyo.class,properties = @PropertyValue (name="anyo"))
-	@ReadOnly
-	int numero; 
+	 
+	@ReadOnly  
+	int numero;
 	
 	@Required
 	@DefaultValueCalculator(CurrentLocalDateCalculator.class)
@@ -72,14 +72,15 @@ abstract public class DocumentoComercial extends Identificable{
 	  
 	@PrePersist  
 	private void calcularNumero() {
-	    Query query = XPersistence.getManager().createQuery(
-	        "select max(f.numero) from " +
-	        getClass().getSimpleName() +  
-	        " f where f.anyo = :anyo");
-	    query.setParameter("anyo", anyo);
-	    Integer ultimoNumero = (Integer) query.getSingleResult();
-	    this.numero = ultimoNumero == null ? 1 : ultimoNumero + 1;
+	Query query = XPersistence.getManager().createQuery(
+	"select max(f.numero) from " +
+	getClass().getSimpleName() +  
+	" f where f.anyo = :anyo");
+	query.setParameter("anyo", anyo);
+	Integer ultimoNumero = (Integer) query.getSingleResult();
+	this.numero = ultimoNumero == null ? 1 : ultimoNumero + 1;
 	}
+	
 	@org.hibernate.annotations.Formula("IMPORTETOTAL * 0.10")
 	@Setter(AccessLevel.NONE)
 	@Stereotype("DINERO")
